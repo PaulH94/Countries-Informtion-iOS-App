@@ -14,6 +14,8 @@
 		EB7E7AFE2005936500765212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AFC2005936500765212 /* LaunchScreen.storyboard */; };
 		EB7E7B092005936500765212 /* eBayCountryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7B082005936500765212 /* eBayCountryAppTests.swift */; };
 		EB7E7B142005936500765212 /* eBayCountryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7B132005936500765212 /* eBayCountryAppUITests.swift */; };
+		EBFE3CFA2006178000637761 /* CountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3CF92006178000637761 /* CountriesTableViewCell.swift */; };
+		EBFE3CFC20061A7200637761 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE3CFB20061A7200637761 /* CountriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		EB7E7B0F2005936500765212 /* eBayCountryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eBayCountryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7E7B132005936500765212 /* eBayCountryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBayCountryAppUITests.swift; sourceTree = "<group>"; };
 		EB7E7B152005936500765212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBFE3CF92006178000637761 /* CountriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewCell.swift; sourceTree = "<group>"; };
+		EBFE3CFB20061A7200637761 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				EB7E7AFA2005936500765212 /* Assets.xcassets */,
 				EB7E7AFC2005936500765212 /* LaunchScreen.storyboard */,
 				EB7E7AFF2005936500765212 /* Info.plist */,
+				EBFE3CF92006178000637761 /* CountriesTableViewCell.swift */,
+				EBFE3CFB20061A7200637761 /* CountriesTableViewController.swift */,
 			);
 			path = eBayCountryApp;
 			sourceTree = "<group>";
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBFE3CFC20061A7200637761 /* CountriesTableViewController.swift in Sources */,
 				EB7E7AF62005936500765212 /* ViewController.swift in Sources */,
 				EB7E7AF42005936500765212 /* AppDelegate.swift in Sources */,
+				EBFE3CFA2006178000637761 /* CountriesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB7E7AF42005936500765212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7AF32005936500765212 /* AppDelegate.swift */; };
+		EB7E7AF62005936500765212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7AF52005936500765212 /* ViewController.swift */; };
+		EB7E7AF92005936500765212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AF72005936500765212 /* Main.storyboard */; };
+		EB7E7AFB2005936500765212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AFA2005936500765212 /* Assets.xcassets */; };
+		EB7E7AFE2005936500765212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AFC2005936500765212 /* LaunchScreen.storyboard */; };
+		EB7E7B092005936500765212 /* eBayCountryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7B082005936500765212 /* eBayCountryAppTests.swift */; };
+		EB7E7B142005936500765212 /* eBayCountryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7B132005936500765212 /* eBayCountryAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB7E7B052005936500765212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB7E7AE82005936500765212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7E7AEF2005936500765212;
+			remoteInfo = eBayCountryApp;
+		};
+		EB7E7B102005936500765212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB7E7AE82005936500765212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7E7AEF2005936500765212;
+			remoteInfo = eBayCountryApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB7E7AF02005936500765212 /* eBayCountryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBayCountryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7E7AF32005936500765212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB7E7AF52005936500765212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB7E7AF82005936500765212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB7E7AFA2005936500765212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB7E7AFD2005936500765212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB7E7AFF2005936500765212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB7E7B042005936500765212 /* eBayCountryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eBayCountryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7E7B082005936500765212 /* eBayCountryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBayCountryAppTests.swift; sourceTree = "<group>"; };
+		EB7E7B0A2005936500765212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB7E7B0F2005936500765212 /* eBayCountryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eBayCountryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7E7B132005936500765212 /* eBayCountryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eBayCountryAppUITests.swift; sourceTree = "<group>"; };
+		EB7E7B152005936500765212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB7E7AED2005936500765212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B012005936500765212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B0C2005936500765212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB7E7AE72005936500765212 = {
+			isa = PBXGroup;
+			children = (
+				EB7E7AF22005936500765212 /* eBayCountryApp */,
+				EB7E7B072005936500765212 /* eBayCountryAppTests */,
+				EB7E7B122005936500765212 /* eBayCountryAppUITests */,
+				EB7E7AF12005936500765212 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB7E7AF12005936500765212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E7AF02005936500765212 /* eBayCountryApp.app */,
+				EB7E7B042005936500765212 /* eBayCountryAppTests.xctest */,
+				EB7E7B0F2005936500765212 /* eBayCountryAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB7E7AF22005936500765212 /* eBayCountryApp */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E7AF32005936500765212 /* AppDelegate.swift */,
+				EB7E7AF52005936500765212 /* ViewController.swift */,
+				EB7E7AF72005936500765212 /* Main.storyboard */,
+				EB7E7AFA2005936500765212 /* Assets.xcassets */,
+				EB7E7AFC2005936500765212 /* LaunchScreen.storyboard */,
+				EB7E7AFF2005936500765212 /* Info.plist */,
+			);
+			path = eBayCountryApp;
+			sourceTree = "<group>";
+		};
+		EB7E7B072005936500765212 /* eBayCountryAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E7B082005936500765212 /* eBayCountryAppTests.swift */,
+				EB7E7B0A2005936500765212 /* Info.plist */,
+			);
+			path = eBayCountryAppTests;
+			sourceTree = "<group>";
+		};
+		EB7E7B122005936500765212 /* eBayCountryAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EB7E7B132005936500765212 /* eBayCountryAppUITests.swift */,
+				EB7E7B152005936500765212 /* Info.plist */,
+			);
+			path = eBayCountryAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB7E7AEF2005936500765212 /* eBayCountryApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7E7B182005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryApp" */;
+			buildPhases = (
+				EB7E7AEC2005936500765212 /* Sources */,
+				EB7E7AED2005936500765212 /* Frameworks */,
+				EB7E7AEE2005936500765212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eBayCountryApp;
+			productName = eBayCountryApp;
+			productReference = EB7E7AF02005936500765212 /* eBayCountryApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB7E7B032005936500765212 /* eBayCountryAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7E7B1B2005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryAppTests" */;
+			buildPhases = (
+				EB7E7B002005936500765212 /* Sources */,
+				EB7E7B012005936500765212 /* Frameworks */,
+				EB7E7B022005936500765212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB7E7B062005936500765212 /* PBXTargetDependency */,
+			);
+			name = eBayCountryAppTests;
+			productName = eBayCountryAppTests;
+			productReference = EB7E7B042005936500765212 /* eBayCountryAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB7E7B0E2005936500765212 /* eBayCountryAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7E7B1E2005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryAppUITests" */;
+			buildPhases = (
+				EB7E7B0B2005936500765212 /* Sources */,
+				EB7E7B0C2005936500765212 /* Frameworks */,
+				EB7E7B0D2005936500765212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB7E7B112005936500765212 /* PBXTargetDependency */,
+			);
+			name = eBayCountryAppUITests;
+			productName = eBayCountryAppUITests;
+			productReference = EB7E7B0F2005936500765212 /* eBayCountryAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB7E7AE82005936500765212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Paul Huynh";
+				TargetAttributes = {
+					EB7E7AEF2005936500765212 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					EB7E7B032005936500765212 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EB7E7AEF2005936500765212;
+					};
+					EB7E7B0E2005936500765212 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EB7E7AEF2005936500765212;
+					};
+				};
+			};
+			buildConfigurationList = EB7E7AEB2005936500765212 /* Build configuration list for PBXProject "eBayCountryApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB7E7AE72005936500765212;
+			productRefGroup = EB7E7AF12005936500765212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB7E7AEF2005936500765212 /* eBayCountryApp */,
+				EB7E7B032005936500765212 /* eBayCountryAppTests */,
+				EB7E7B0E2005936500765212 /* eBayCountryAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB7E7AEE2005936500765212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7E7AFE2005936500765212 /* LaunchScreen.storyboard in Resources */,
+				EB7E7AFB2005936500765212 /* Assets.xcassets in Resources */,
+				EB7E7AF92005936500765212 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B022005936500765212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B0D2005936500765212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB7E7AEC2005936500765212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7E7AF62005936500765212 /* ViewController.swift in Sources */,
+				EB7E7AF42005936500765212 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B002005936500765212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7E7B092005936500765212 /* eBayCountryAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB7E7B0B2005936500765212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7E7B142005936500765212 /* eBayCountryAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB7E7B062005936500765212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB7E7AEF2005936500765212 /* eBayCountryApp */;
+			targetProxy = EB7E7B052005936500765212 /* PBXContainerItemProxy */;
+		};
+		EB7E7B112005936500765212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB7E7AEF2005936500765212 /* eBayCountryApp */;
+			targetProxy = EB7E7B102005936500765212 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB7E7AF72005936500765212 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB7E7AF82005936500765212 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB7E7AFC2005936500765212 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB7E7AFD2005936500765212 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB7E7B162005936500765212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB7E7B172005936500765212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB7E7B192005936500765212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB7E7B1A2005936500765212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EB7E7B1C2005936500765212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eBayCountryApp.app/eBayCountryApp";
+			};
+			name = Debug;
+		};
+		EB7E7B1D2005936500765212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eBayCountryApp.app/eBayCountryApp";
+			};
+			name = Release;
+		};
+		EB7E7B1F2005936500765212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = eBayCountryApp;
+			};
+			name = Debug;
+		};
+		EB7E7B202005936500765212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = eBayCountryAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Paul-Huynh.eBayCountryAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = eBayCountryApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB7E7AEB2005936500765212 /* Build configuration list for PBXProject "eBayCountryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7E7B162005936500765212 /* Debug */,
+				EB7E7B172005936500765212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB7E7B182005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7E7B192005936500765212 /* Debug */,
+				EB7E7B1A2005936500765212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB7E7B1B2005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7E7B1C2005936500765212 /* Debug */,
+				EB7E7B1D2005936500765212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB7E7B1E2005936500765212 /* Build configuration list for PBXNativeTarget "eBayCountryAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7E7B1F2005936500765212 /* Debug */,
+				EB7E7B202005936500765212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB7E7AE82005936500765212 /* Project object */;
+}

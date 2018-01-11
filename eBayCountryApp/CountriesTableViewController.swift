@@ -12,7 +12,7 @@ struct Countries: Codable{
     let name: String
     let capital: String
     let population: Int
-    let latlng: [Int]
+    let latlng: [Double]
 }
 
 enum Result<Value>{
@@ -64,10 +64,10 @@ class CountriesTableViewController: UITableViewController {
                 do{
                     print("In the DO")
                     //print(jsonData)
-                    //let countries = try decoder.decode([Countries].self, from: jsonData)
-                    let countries = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                    print(countries)
-                    //completion?(.success(countries))
+                    let countries = try decoder.decode([Countries].self, from: jsonData)
+                    //let countries = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                    print(countries[0])
+                    completion?(.success(countries))
                 } catch{
                     completion?(.fail(error))
                 }
@@ -83,21 +83,25 @@ class CountriesTableViewController: UITableViewController {
     var coty = [Countries]()
     let cellIdentifier = "countriesCell"
     
+    @IBOutlet var CountriesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.navigationItem.title = "Countries"
         
         print("LOADING TABLE")
         getCountries(){ (result) in
             switch result{
             case .success(let countries):
                 self.coty = countries
+                print("count222: \(self.coty.count)")
+                self.CountriesTableView.reloadData()
             case .fail(let error):
                 fatalError("error: \(error.localizedDescription)")
             }
             
         }
+        print("count: \(coty.count)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -118,7 +122,7 @@ class CountriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return coty.count
     }
 
     
@@ -126,7 +130,7 @@ class CountriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountriesTableViewCell
         // Configure the cell...
-        cell.countryName.text = "temp"
+        cell.countryName.text = coty[indexPath.row].name
 
         return cell
     }

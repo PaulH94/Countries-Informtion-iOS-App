@@ -45,6 +45,9 @@
                             <outlet property="delegate" destination="Ppo-ru-WXY" id="EqV-Zt-jU9"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="CountriesTableView" destination="1mb-31-XeZ" id="mBT-Ey-Cz5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTd-1S-Kih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

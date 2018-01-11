@@ -80,7 +80,7 @@ class CountriesTableViewController: UITableViewController {
         
     }
     
-    var coty = [Countries]()
+    var countriesList = [Countries]()
     let cellIdentifier = "countriesCell"
     
     @IBOutlet var CountriesTableView: UITableView!
@@ -89,25 +89,42 @@ class CountriesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Countries"
         
+        /*
         print("LOADING TABLE")
         getCountries(){ (result) in
             switch result{
             case .success(let countries):
-                self.coty = countries
-                print("count222: \(self.coty.count)")
+                self.countriesList = countries
+                print("count222: \(self.countriesList.count)")
+                self.CountriesTableView.reloadData()
+            case .fail(let error):
+                fatalError("error: \(error.localizedDescription)")
+            }
+            
+        }*/
+        loadTable()
+        print("count: \(countriesList.count)")
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.tableFooterView = UIView()    //This is to clear extra rows
+    }
+    
+    private func loadTable(){
+        print("LOADING TABLE")
+        getCountries(){ (result) in
+            switch result{
+            case .success(let countries):
+                self.countriesList = countries
+                print("count222: \(self.countriesList.count)")
                 self.CountriesTableView.reloadData()
             case .fail(let error):
                 fatalError("error: \(error.localizedDescription)")
             }
             
         }
-        print("count: \(coty.count)")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,7 +139,7 @@ class CountriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coty.count
+        return countriesList.count
     }
 
     
@@ -130,11 +147,20 @@ class CountriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountriesTableViewCell
         // Configure the cell...
-        cell.countryName.text = coty[indexPath.row].name
+        cell.countryName.text = countriesList[indexPath.row].name
 
         return cell
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedIndexPath = indexPath.row
+        print("\(countriesList[selectedIndexPath].name) is being clicked")
+        let infoView = InformationViewController()
+        infoView.countryName = countriesList[selectedIndexPath].name
+        
+        navigationController?.pushViewController(infoView, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

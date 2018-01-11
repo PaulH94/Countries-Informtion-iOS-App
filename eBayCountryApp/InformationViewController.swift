@@ -10,15 +10,24 @@ import UIKit
 
 class InformationViewController: UIViewController {
 
+    var countryName: String = "Temp"
+    var countryCapital: String = ""
+    var populationn: Int = 0
+    var lat: Int = 0
+    var long: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpNavBar()
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(cNameLabel)
+        cNameLabel.center = view.center
+        // Do any additional setup after loading view.
     }
     
     private func setUpNavBar(){
-        self.navigationItem.title = "CCCCCC"
+        self.navigationItem.title = "Country Information"
         self.navigationItem.leftBarButtonItem?.title = "Back"
         
         view.addSubview(cNameLabel)
@@ -30,9 +39,10 @@ class InformationViewController: UIViewController {
     }
     
     lazy var cNameLabel:UILabel! = {
-        let view = UILabel()
-        view.text = "Country"
-        return view
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        label.text = countryName
+        return label
     }()
 
     /*

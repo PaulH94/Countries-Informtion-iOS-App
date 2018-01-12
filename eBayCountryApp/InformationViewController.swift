@@ -14,9 +14,11 @@ import MapKit
 //The challenege here was to make the view with code instead of storyboard
 class InformationViewController: UIViewController {
 
+    //There will be information that are passed in that will overwrite all of this temp data
     var countryName: String = "Temp"
-    var countryCapital: String = ""
+    var countryCapital: String = "Cap"
     var countryNativeName: String = "Native"
+    var countrySubregion: String = "Sub"
     var countryPopulation: Int = 0
     var lat: Double = 0.0
     var long: Double = 0.0
@@ -32,6 +34,7 @@ class InformationViewController: UIViewController {
         view.addSubview(nativeNameLabel)
         view.addSubview(capitalLabel)
         view.addSubview(populationLabel)
+        view.addSubview(subregionLabel)
         view.addSubview(mapView);
         setUpLayout()       //set up the views
         
@@ -41,7 +44,16 @@ class InformationViewController: UIViewController {
     
     //function for setting up the auto layout
     func setUpLayout(){
-
+        
+        //Each label will have similar constraints
+        //translatesAutoresizingMaskIntoConstraints is so that we can autosize with constraints and not frames
+        //topAnchor is where the top of the view is restricted to, usually it is connected to the view above it's bottom anchor
+        //CenterXAnchor is used to make sure everything is lined up together
+        //highanchor is to make sure we're in control of how tall the view is, this could be either a constant or a ratio comparison
+        //WidthAnchor is the same as highanchor but with the width instead
+        //No need for a bottom/left/right anchor here, since I have a top,hight, and width anchor
+        //A view will usually only need four anchors beside the translatesAutoresizingMaskIntoConstraints.
+        
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -51,7 +63,6 @@ class InformationViewController: UIViewController {
         nativeNameLabel.translatesAutoresizingMaskIntoConstraints = false
         nativeNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
         nativeNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        //nativeNameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nativeNameLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
         nativeNameLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
@@ -67,11 +78,16 @@ class InformationViewController: UIViewController {
         populationLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
         populationLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
+        subregionLabel.translatesAutoresizingMaskIntoConstraints = false
+        subregionLabel.topAnchor.constraint(equalTo: populationLabel.bottomAnchor).isActive = true
+        subregionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        subregionLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
+        subregionLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.topAnchor.constraint(equalTo: populationLabel.bottomAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: subregionLabel.bottomAnchor).isActive = true
         mapView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mapView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        mapView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33).isActive = true
         mapView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
     }
@@ -98,6 +114,7 @@ class InformationViewController: UIViewController {
         return label
     }()
     
+    //Native name label, the string class will handle ani unicode
     lazy var nativeNameLabel:UILabel! = {
         let label = UILabel()
         label.text = "Native Name: \(countryNativeName)"
@@ -121,6 +138,15 @@ class InformationViewController: UIViewController {
     lazy var populationLabel: UILabel! = {
         let label = UILabel()
         label.text = "Population: \(String(countryPopulation))"
+        label.textAlignment = NSTextAlignment.center
+        return label
+    }()
+    
+    //Set up the subregion label
+    //Subregion is enough, region is a tad too much
+    lazy var subregionLabel: UILabel! = {
+        let label = UILabel()
+        label.text = "Subregion: \(countrySubregion)"
         label.textAlignment = NSTextAlignment.center
         return label
     }()

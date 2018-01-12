@@ -11,6 +11,8 @@ import UIKit
 //A struct that is used to store some of the JSON data
 //Note: "Codable" means that it can be used to encode and decode JSON data.
 //The varible name have to match the JSON key and the type has to match.
+//A number of more data could have been recorded, but for this exercise I am going to only get what I
+//need and data that I think are more important to "people" who would use the app
 struct Countries: Codable{
     let name: String
     let capital: String
@@ -18,10 +20,13 @@ struct Countries: Codable{
     let latlng: [Double]
     let nativeName: String
     let subregion: String
+    let area: Double?           //Potentially used for map span
+    let alpha2Code: String      //Potentially used for flags
 }
 
 
 //Enum for return the result of the web call
+//either return a success and the data or a fail and the error message
 enum Result<Value>{
     case success(Value)
     case fail(Error)
@@ -42,7 +47,7 @@ class CountriesTableViewController: UITableViewController {
         self.navigationItem.title = "Countries"         //Nav title
         
         //self.CountriesTableView.backgroundView = UILabel()
-        
+        //TODO: Add some sort of loading message
         
         loadTable()                                     //To load the table with data
         tableView.tableFooterView = UIView()            //This is to clear extra rows
@@ -52,8 +57,10 @@ class CountriesTableViewController: UITableViewController {
     //The function to load the table with data
     private func loadTable(){
         print("LOADING TABLE")
+        let webCall = WebCallController()
+        
         //Call the web call function
-        getCountries(){ (result) in
+        webCall.getCountries(){ (result) in
             switch result{
             case .success(let countries):                   //if success, reload the table view
                 self.countriesList = countries
@@ -62,7 +69,7 @@ class CountriesTableViewController: UITableViewController {
                 }
             case .fail(let error):                          //if fail, fatalerror
                 //fatalError("error: \(error.localizedDescription)")
-                //TODO: Make a popup telling the user what happened
+                //TODO - DONE: Make a popup telling the user what happened 
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
                 self.present(alert,animated: true)
@@ -73,63 +80,7 @@ class CountriesTableViewController: UITableViewController {
     }
 
     
-    //Web call function to get the information about the countries
-    func getCountries(completion: ((Result<[Countries]>)-> Void)?){
-        
-        //The URL of the API call
-        let url = URL(string:"https://restcountries-v1.p.mashape.com/all")
-        
-        //The request
-        var request = URLRequest(url: url!)
-        print(request)
-        
-        //declaring the http method
-        request.httpMethod = "GET"
-        
-        //Setting the headers
-        request.setValue("1IosQYQKu0mshuIZjcqiIXbiLGJSp1dBB9Yjsnfd2aISWLA7Yk", forHTTPHeaderField:"X-Mashape-Key")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        //Making the API call, receiving the Data and/or error message
-        let task = session.dataTask(with: request){ (responseData, response, responseError) in
-            
-            //Calling the main thread
-            DispatchQueue.main.async {
-                
-                //if there's an error, return a fail
-                guard responseError == nil else{
-                    completion?(.fail(responseError!))
-                    return
-                }
-                
-                //Making sure that there is JSON data, else return a fail
-                guard let jsonData = responseData else{
-                    let error = NSError(domain: "", code:0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
-                    completion?(.fail(error))
-                    return
-                }
-                
-                //The decoder
-                let decoder = JSONDecoder()
-                
-                do{
-                    print("In the DO")
-                    //Decode the JSON
-                    let countries = try decoder.decode([Countries].self, from: jsonData)
-                    /*let c = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                     print(c)*/
-                    print(countries[0])
-                    completion?(.success(countries))    //return a fail
-                } catch{
-                    completion?(.fail(error))           //if it is not decodable, return a fail
-                }
-            }
-        }
-        task.resume()
-    }
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -171,12 +122,15 @@ class CountriesTableViewController: UITableViewController {
         infoView.countryNativeName = countriesList[selectedIndexPath].nativeName
         infoView.countryCapital = countriesList[selectedIndexPath].capital
         infoView.countryPopulation = countriesList[selectedIndexPath].population
+        infoView.countrySubregion = countriesList[selectedIndexPath].subregion
         infoView.lat = countriesList[selectedIndexPath].latlng[0]
         infoView.long = countriesList[selectedIndexPath].latlng[1]
         
         //display the view that was made, this could have been done in other ways
         self.navigationController?.pushViewController(infoView, animated: true)
     }
+    
+    //READ: This could have been also done with a segue, but this was is much easier and quicker
 
     
     /*

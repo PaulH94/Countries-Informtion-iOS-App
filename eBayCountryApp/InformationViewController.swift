@@ -16,6 +16,7 @@ class InformationViewController: UIViewController {
 
     var countryName: String = "Temp"
     var countryCapital: String = ""
+    var countryNativeName: String = "Native"
     var countryPopulation: Int = 0
     var lat: Double = 0.0
     var long: Double = 0.0
@@ -28,6 +29,7 @@ class InformationViewController: UIViewController {
         
         //Add all the views to the main view
         view.addSubview(nameLabel)
+        view.addSubview(nativeNameLabel)
         view.addSubview(capitalLabel)
         view.addSubview(populationLabel)
         view.addSubview(mapView);
@@ -46,16 +48,23 @@ class InformationViewController: UIViewController {
         nameLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
+        nativeNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nativeNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        nativeNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //nativeNameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        nativeNameLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
+        nativeNameLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
         capitalLabel.translatesAutoresizingMaskIntoConstraints = false
-        capitalLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        capitalLabel.topAnchor.constraint(equalTo: nativeNameLabel.bottomAnchor).isActive = true
         capitalLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        capitalLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        capitalLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
         capitalLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 
         populationLabel.translatesAutoresizingMaskIntoConstraints = false
         populationLabel.topAnchor.constraint(equalTo: capitalLabel.bottomAnchor).isActive = true
         populationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        populationLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        populationLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05).isActive = true
         populationLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
         
@@ -78,19 +87,29 @@ class InformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //This is where I set up the labels for the view, by using lazy they will not be initialized until called upon.
+    
+    //The name label
     lazy var nameLabel:UILabel! = {
         let label = UILabel()
-        //label.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         label.text = countryName
         label.font = label.font.withSize(35)
         label.textAlignment = NSTextAlignment.center
         return label
     }()
     
+    lazy var nativeNameLabel:UILabel! = {
+        let label = UILabel()
+        label.text = "Native Name: \(countryNativeName)"
+        label.textAlignment = NSTextAlignment.center
+        return label
+        
+    }()
+    
+    
     //capital label
     lazy var capitalLabel:UILabel! = {
         let label = UILabel()
-        //label.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         label.text = "Capital: \(countryCapital)"
         label.textAlignment = NSTextAlignment.center
         return label

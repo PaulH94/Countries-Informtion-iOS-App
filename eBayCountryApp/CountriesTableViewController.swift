@@ -16,7 +16,8 @@ struct Countries: Codable{
     let capital: String
     let population: Int
     let latlng: [Double]
-    let region: String
+    let nativeName: String
+    let subregion: String
 }
 
 
@@ -30,6 +31,47 @@ enum Result<Value>{
 //This is the controller for the table of countries
 class CountriesTableViewController: UITableViewController {
     
+    var countriesList = [Countries]()           //Array of countries
+    let cellIdentifier = "countriesCell"        //cell indentifier of the countriesTableViewCell
+    
+    @IBOutlet var CountriesTableView: UITableView!      //The table
+    
+    //When the view loads
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "Countries"         //Nav title
+        
+        //self.CountriesTableView.backgroundView = UILabel()
+        
+        
+        loadTable()                                     //To load the table with data
+        tableView.tableFooterView = UIView()            //This is to clear extra rows
+    }
+    
+    
+    //The function to load the table with data
+    private func loadTable(){
+        print("LOADING TABLE")
+        //Call the web call function
+        getCountries(){ (result) in
+            switch result{
+            case .success(let countries):                   //if success, reload the table view
+                self.countriesList = countries
+                DispatchQueue.main.async{
+                    self.CountriesTableView.reloadData()
+                }
+            case .fail(let error):                          //if fail, fatalerror
+                //fatalError("error: \(error.localizedDescription)")
+                //TODO: Make a popup telling the user what happened
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
+                self.present(alert,animated: true)
+                fatalError("error: \(error.localizedDescription)")
+            }
+            
+        }
+    }
+
     
     //Web call function to get the information about the countries
     func getCountries(completion: ((Result<[Countries]>)-> Void)?){
@@ -78,54 +120,18 @@ class CountriesTableViewController: UITableViewController {
                     //Decode the JSON
                     let countries = try decoder.decode([Countries].self, from: jsonData)
                     /*let c = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-                    print(c)*/
+                     print(c)*/
                     print(countries[0])
                     completion?(.success(countries))    //return a fail
                 } catch{
                     completion?(.fail(error))           //if it is not decodable, return a fail
                 }
             }
-            
         }
-        
         task.resume()
-        
-        
-    }
-    
-    var countriesList = [Countries]()           //Array of countries
-    let cellIdentifier = "countriesCell"        //cell indentifier of the countriesTableViewCell
-    
-    @IBOutlet var CountriesTableView: UITableView!      //The table
-    
-    //When the view loads
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "Countries"         //Nav title
-        
-        loadTable()                                     //To load the table with data
-        tableView.tableFooterView = UIView()            //This is to clear extra rows
     }
     
     
-    //The function to load the table with data
-    private func loadTable(){
-        print("LOADING TABLE")
-        //Call the web call function
-        getCountries(){ (result) in
-            switch result{
-            case .success(let countries):                   //if success, reload the table view
-                self.countriesList = countries
-                print("count222: \(self.countriesList.count)")
-                self.CountriesTableView.reloadData()
-            case .fail(let error):                          //if fail, fatalerror
-                fatalError("error: \(error.localizedDescription)")
-                //TODO: Make a popup telling the user what happened
-            }
-            
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -162,6 +168,7 @@ class CountriesTableViewController: UITableViewController {
         //make and prepare the view
         let infoView = InformationViewController()
         infoView.countryName = countriesList[selectedIndexPath].name
+        infoView.countryNativeName = countriesList[selectedIndexPath].nativeName
         infoView.countryCapital = countriesList[selectedIndexPath].capital
         infoView.countryPopulation = countriesList[selectedIndexPath].population
         infoView.lat = countriesList[selectedIndexPath].latlng[0]

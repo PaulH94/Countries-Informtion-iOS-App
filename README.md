@@ -8,3 +8,5 @@ TODOS:<br />
 -Add the countries' map to both the table view and info view.<br />
 -Probably some other stuff.
 
+Problems(features):<br />
+-Compass and scale problem. Console is logging that it can't load the compass and scale, do not need them thought.

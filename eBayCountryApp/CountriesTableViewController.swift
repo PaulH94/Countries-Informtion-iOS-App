@@ -5,6 +5,7 @@
 //  Created by Paul Huynh on 1/10/18.
 //  Copyright © 2018 Paul Huynh. All rights reserved.
 //
+//Tried to stick to MVC, but there is some bleed over
 
 import UIKit
 
@@ -18,7 +19,7 @@ struct Countries: Codable{
     let capital: String
     let population: Int
     let latlng: [Double]
-    let nativeName: String
+    let nativeName: String      //String class takes care of unicode
     let subregion: String
     let area: Double?           //Potentially used for map span
     let alpha2Code: String      //Potentially used for flags
@@ -78,10 +79,6 @@ class CountriesTableViewController: UITableViewController {
             
         }
     }
-
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

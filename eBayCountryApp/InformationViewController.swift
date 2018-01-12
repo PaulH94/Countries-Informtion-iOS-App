@@ -56,7 +56,7 @@ class InformationViewController: UIViewController {
         //A view will usually only need four anchors beside the translatesAutoresizingMaskIntoConstraints.
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
@@ -168,9 +168,10 @@ class InformationViewController: UIViewController {
         //TODO: Use area or something to change the span depending on country
         //SUCCESS-ish, by using the square root of the area, I was able to get an approx width and hight
         //for the span. Had to multiple it by 1000 to convert km to meters. Added ten thousand for some space.
-        var sqrtArea = countryArea.squareRoot()
-        sqrtArea = (sqrtArea * 1000) + 10000
-        let countryRegion = MKCoordinateRegionMakeWithDistance(countryLocation, sqrtArea, sqrtArea)
+        //Better for square-ish countries
+        var countrySpan = countryArea.squareRoot()
+        countrySpan = (countrySpan * 1000) + 10000
+        let countryRegion = MKCoordinateRegionMakeWithDistance(countryLocation, countrySpan, countrySpan)
         map.setRegion(countryRegion, animated: true)        //Set the region
         
         return map

@@ -129,6 +129,9 @@ class CountriesTableViewController: UITableViewController {
             infoView.countryArea = 0
         }
         
+        //let web = WebCallController()
+        //infoView.countryFlag = web.getPic(countryCode: countriesList[selectedIndexPath].alpha2Code)
+        
         //display the view that was made, this could have been done in other ways
         self.navigationController?.pushViewController(infoView, animated: true)
     }

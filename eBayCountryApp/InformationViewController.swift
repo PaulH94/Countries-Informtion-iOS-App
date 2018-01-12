@@ -23,7 +23,7 @@ class InformationViewController: UIViewController {
     var lat: Double = 0.0
     var long: Double = 0.0
     var countryArea: Double = 0.0
-    
+    var countryFlag: UIImage = #imageLiteral(resourceName: "whiteFlag")         //to use when getting a flag
     
     override func viewDidLoad() {
         super.viewDidLoad()

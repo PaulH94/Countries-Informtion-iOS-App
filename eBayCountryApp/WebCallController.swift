@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit        //For pictures, UIImage
 
 //This is the web call controller, where all web call would be made
 //TODO: Get Flag images. Store in cache?
@@ -70,17 +70,35 @@ class WebCallController {
     }
     
     /*
-    func getPic(countryCode: String){
-        let url = "http://geonames.org/flags/l/" + countryCode.lowercased() + ".gif"
+    func getPic(countryCode: String) -> UIImage{
+        let url = URL(string:"http://geonames.org/flags/l/" + countryCode.lowercased() + ".gif")
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
+        var pic = UIImage()
         
-        
-        let dlPic = session.dataTask(with: url){ (responseData, response, responseError) in
+        let dlPic = session.dataTask(with: url!){ (responseData, response, responseError) in
+            guard responseError == nil else{
+                print(responseError!)
+                pic = #imageLiteral(resourceName: "whiteFlag")
+                return
+            }
             
+            guard response as? HTTPURLResponse != nil else{
+                print("server not responding")
+                pic = #imageLiteral(resourceName: "whiteFlag")
+                return
+            }
+            
+            if let imageData = responseData{
+                let image = UIImage(data: imageData)
+                pic = image!
+            }else{
+                print("Image is corrupt")
+            }
         }
- 
         
-    }
-     */
+        dlPic.resume()
+        return pic
+    }*/
+    
 }

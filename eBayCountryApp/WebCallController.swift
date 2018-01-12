@@ -55,12 +55,11 @@ class WebCallController {
                 let decoder = JSONDecoder()
                 
                 do{
-                    print("In the DO")
                     //Decode the JSON
                     let countries = try decoder.decode([Countries].self, from: jsonData)
                     /*let c = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                      print(c)*/
-                    print(countries[0])
+                    //print(countries[0])
                     completion?(.success(countries))    //return a fail
                 } catch{
                     completion?(.fail(error))           //if it is not decodable, return a fail

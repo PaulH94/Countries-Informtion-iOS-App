@@ -123,6 +123,12 @@ class CountriesTableViewController: UITableViewController {
         infoView.lat = countriesList[selectedIndexPath].latlng[0]
         infoView.long = countriesList[selectedIndexPath].latlng[1]
         
+        if let area = countriesList[selectedIndexPath].area{
+            infoView.countryArea = area
+        }else{
+            infoView.countryArea = 0
+        }
+        
         //display the view that was made, this could have been done in other ways
         self.navigationController?.pushViewController(infoView, animated: true)
     }

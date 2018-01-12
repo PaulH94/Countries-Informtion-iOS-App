@@ -22,6 +22,7 @@ class InformationViewController: UIViewController {
     var countryPopulation: Int = 0
     var lat: Double = 0.0
     var long: Double = 0.0
+    var countryArea: Double = 0.0
     
     
     override func viewDidLoad() {
@@ -165,7 +166,11 @@ class InformationViewController: UIViewController {
         let countryLocation = CLLocationCoordinate2DMake(lat, long)
         
         //TODO: Use area or something to change the span depending on country
-        let countryRegion = MKCoordinateRegionMakeWithDistance(countryLocation, 1000000, 1000000)
+        //SUCCESS-ish, by using the square root of the area, I was able to get an approx width and hight
+        //for the span. Had to multiple it by 1000 to convert km to meters. Added ten thousand for some space.
+        var sqrtArea = countryArea.squareRoot()
+        sqrtArea = (sqrtArea * 1000) + 10000
+        let countryRegion = MKCoordinateRegionMakeWithDistance(countryLocation, sqrtArea, sqrtArea)
         map.setRegion(countryRegion, animated: true)        //Set the region
         
         return map

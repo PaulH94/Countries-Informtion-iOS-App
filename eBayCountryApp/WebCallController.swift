@@ -70,15 +70,18 @@ class WebCallController {
         task.resume()
     }
     
+    /*
     func getPic(countryCode: String){
         let url = "http://geonames.org/flags/l/" + countryCode.lowercased() + ".gif"
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
+        
         let dlPic = session.dataTask(with: url){ (responseData, response, responseError) in
             
         }
-        
+ 
         
     }
+     */
 }

@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import MapKit
 
 class InformationViewController: UIViewController {
 
     var countryName: String = "Temp"
     var countryCapital: String = ""
     var populationn: Int = 0
-    var lat: Int = 0
-    var long: Int = 0
+    var lat: Double = 0.0
+    var long: Double = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +42,26 @@ class InformationViewController: UIViewController {
     
     lazy var cNameLabel:UILabel! = {
         let label = UILabel()
-        label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        label.frame = CGRect(x: 0, y: 0, width: 200, height: 100)
         label.text = countryName
         return label
     }()
 
+    lazy var mapView:MKMapView! = {
+        let map = MKMapView()
+        map.mapType = MKMapType.standard
+        map.isZoomEnabled = false
+        map.isScrollEnabled = false
+        
+        let countryLocation = CLLocation(latitude: lat, longitude: long)
+        
+        
+        
+        return map
+    }()
+    
+    
+    
     /*
     // MARK: - Navigation
 

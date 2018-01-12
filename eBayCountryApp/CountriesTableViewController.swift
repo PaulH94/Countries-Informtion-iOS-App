@@ -13,6 +13,7 @@ struct Countries: Codable{
     let capital: String
     let population: Int
     let latlng: [Double]
+    let region: String
 }
 
 enum Result<Value>{
@@ -89,21 +90,7 @@ class CountriesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Countries"
         
-        /*
-        print("LOADING TABLE")
-        getCountries(){ (result) in
-            switch result{
-            case .success(let countries):
-                self.countriesList = countries
-                print("count222: \(self.countriesList.count)")
-                self.CountriesTableView.reloadData()
-            case .fail(let error):
-                fatalError("error: \(error.localizedDescription)")
-            }
-            
-        }*/
         loadTable()
-        print("count: \(countriesList.count)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -158,8 +145,12 @@ class CountriesTableViewController: UITableViewController {
         print("\(countriesList[selectedIndexPath].name) is being clicked")
         let infoView = InformationViewController()
         infoView.countryName = countriesList[selectedIndexPath].name
+        infoView.countryCapital = countriesList[selectedIndexPath].capital
+        infoView.populationn = countriesList[selectedIndexPath].population
+        infoView.lat = countriesList[selectedIndexPath].latlng[0]
+        infoView.long = countriesList[selectedIndexPath].latlng[1]
         
-        navigationController?.pushViewController(infoView, animated: true)
+        self.navigationController?.pushViewController(infoView, animated: true)
     }
 
     /*

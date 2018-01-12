@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ppo-ru-WXY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="poN-sf-EZH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DG7-wF-jCg">
+            <objects>
+                <navigationController id="poN-sf-EZH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ub9-Vj-p1X">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ppo-ru-WXY" kind="relationship" relationship="rootViewController" id="mo0-gm-csw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azg-9r-QYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1690" y="118"/>
+        </scene>
         <!--Countries Table View Controller-->
         <scene sceneID="cVr-C4-95M">
             <objects>
@@ -45,6 +61,7 @@
                             <outlet property="delegate" destination="Ppo-ru-WXY" id="EqV-Zt-jU9"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="j5y-p2-zLf"/>
                     <connections>
                         <outlet property="CountriesTableView" destination="1mb-31-XeZ" id="mBT-Ey-Cz5"/>
                     </connections>
@@ -66,6 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-2031" y="831"/>
         </scene>
     </scenes>
 </document>

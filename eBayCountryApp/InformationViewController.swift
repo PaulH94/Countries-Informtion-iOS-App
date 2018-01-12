@@ -111,7 +111,8 @@ class InformationViewController: UIViewController {
         let label = UILabel()
         label.text = countryName
         label.font = label.font.withSize(35)
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.center    //Center text
+        label.adjustsFontSizeToFitWidth = true          //Adjust font size if need to
         return label
     }()
     
@@ -119,7 +120,8 @@ class InformationViewController: UIViewController {
     lazy var nativeNameLabel:UILabel! = {
         let label = UILabel()
         label.text = "Native Name: \(countryNativeName)"
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.center    //Center
+        label.adjustsFontSizeToFitWidth = true          //Adjust
         return label
         
     }()
@@ -129,7 +131,8 @@ class InformationViewController: UIViewController {
     lazy var capitalLabel:UILabel! = {
         let label = UILabel()
         label.text = "Capital: \(countryCapital)"
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.center    //Center
+        label.adjustsFontSizeToFitWidth = true          //Adjust
         return label
         
     }()
@@ -139,7 +142,8 @@ class InformationViewController: UIViewController {
     lazy var populationLabel: UILabel! = {
         let label = UILabel()
         label.text = "Population: \(String(countryPopulation))"
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.center    //center
+        label.adjustsFontSizeToFitWidth = true          //adjust
         return label
     }()
     
@@ -148,7 +152,8 @@ class InformationViewController: UIViewController {
     lazy var subregionLabel: UILabel! = {
         let label = UILabel()
         label.text = "Subregion: \(countrySubregion)"
-        label.textAlignment = NSTextAlignment.center
+        label.textAlignment = NSTextAlignment.center    //center
+        label.adjustsFontSizeToFitWidth = true          //adjust
         return label
     }()
 

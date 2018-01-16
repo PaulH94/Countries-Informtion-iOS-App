@@ -23,6 +23,7 @@ class InformationViewController: UIViewController {
     var lat: Double = 0.0
     var long: Double = 0.0
     var countryArea: Double = 0.0
+    var countrySpan: Double = 0.0
     var countryFlag: UIImage = #imageLiteral(resourceName: "whiteFlag")         //to use when getting a flag
     
     override func viewDidLoad() {
@@ -174,8 +175,8 @@ class InformationViewController: UIViewController {
         //SUCCESS-ish, by using the square root of the area, I was able to get an approx width and hight
         //for the span. Had to multiple it by 1000 to convert km to meters. Added ten thousand for some space.
         //Better for square-ish countries
-        var countrySpan = countryArea.squareRoot()
-        countrySpan = (countrySpan * 1000) + 10000
+        //var countrySpan = countryArea.squareRoot()
+        //countrySpan = (countrySpan * 1000) + 10000
         let countryRegion = MKCoordinateRegionMakeWithDistance(countryLocation, countrySpan, countrySpan)
         map.setRegion(countryRegion, animated: true)        //Set the region
         

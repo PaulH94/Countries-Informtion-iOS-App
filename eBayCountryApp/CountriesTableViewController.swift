@@ -126,8 +126,12 @@ class CountriesTableViewController: UITableViewController {
         
         if let area = countriesList[selectedIndexPath].area{
             infoView.countryArea = area
+            var span = area.squareRoot()
+            span = (span * 1000) + 15000
+            infoView.countrySpan = span
         }else{
             infoView.countryArea = 0
+            infoView.countrySpan = 10000
         }
         
         //let web = WebCallController()

@@ -9,12 +9,13 @@
 
 import UIKit
 
+
 //A struct that is used to store some of the JSON data
 //Note: "Codable" means that it can be used to encode and decode JSON data.
 //The varible name have to match the JSON key and the type has to match.
 //A number of more data could have been recorded, but for this exercise I am going to only get what I
 //need and data that I think are more important to "people" who would use the app
-struct Countries: Codable{
+struct Country: Codable{
     let name: String
     let capital: String
     let population: Int
@@ -37,7 +38,7 @@ enum Result<Value>{
 //This is the controller for the table of countries
 class CountriesTableViewController: UITableViewController {
     
-    var countriesList = [Countries]()           //Array of countries
+    var countriesList = [Country]();          //Array of countries
     let cellIdentifier = "countriesCell"        //cell indentifier of the countriesTableViewCell
     
     @IBOutlet var CountriesTableView: UITableView!      //The table

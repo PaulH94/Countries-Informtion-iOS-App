@@ -13,7 +13,7 @@ import UIKit        //For pictures, UIImage
 //TODO: Get Flag images. Store in cache?
 class WebCallController {
     //Web call function to get the information about the countries
-    func getCountries(completion: ((Result<[Countries]>)-> Void)?){
+    func getCountries(completion: ((Result<[Country]>)-> Void)?){
         
         //The URL of the API call
         let url = URL(string:"https://restcountries-v1.p.mashape.com/all")
@@ -56,7 +56,7 @@ class WebCallController {
                 
                 do{
                     //Decode the JSON
-                    let countries = try decoder.decode([Countries].self, from: jsonData)
+                    let countries = try decoder.decode([Country].self, from: jsonData)
                     /*let c = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
                      print(c)*/
                     //print(countries[0])

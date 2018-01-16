@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 //This is for the cells in the table
 class CountriesTableViewCell: UITableViewCell {
 

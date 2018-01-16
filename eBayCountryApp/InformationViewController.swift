@@ -88,7 +88,7 @@ class InformationViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: subregionLabel.bottomAnchor).isActive = true
         mapView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        mapView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33).isActive = true
+        mapView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.50).isActive = true
         mapView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         
     }
@@ -128,7 +128,7 @@ class InformationViewController: UIViewController {
     
     
     //capital label
-    lazy var capitalLabel:UILabel! = {
+    lazy var capitalLabel:UILabel = {
         let label = UILabel()
         label.text = "Capital: \(countryCapital)"
         label.textAlignment = NSTextAlignment.center    //Center
@@ -139,7 +139,7 @@ class InformationViewController: UIViewController {
     
     
     //Set up the population label
-    lazy var populationLabel: UILabel! = {
+    lazy var populationLabel: UILabel = {
         let label = UILabel()
         label.text = "Population: \(String(countryPopulation))"
         label.textAlignment = NSTextAlignment.center    //center
@@ -149,7 +149,7 @@ class InformationViewController: UIViewController {
     
     //Set up the subregion label
     //Subregion is enough, region is a tad too much
-    lazy var subregionLabel: UILabel! = {
+    lazy var subregionLabel: UILabel = {
         let label = UILabel()
         label.text = "Subregion: \(countrySubregion)"
         label.textAlignment = NSTextAlignment.center    //center
@@ -158,12 +158,12 @@ class InformationViewController: UIViewController {
     }()
 
     //The map View
-    lazy var mapView:MKMapView! = {
+    lazy var mapView:MKMapView = {
         let map = MKMapView()
         //map setting
         map.mapType = MKMapType.standard
-        map.isZoomEnabled = false
-        map.isScrollEnabled = false
+        map.isZoomEnabled = true            //renabled soom and scroll
+        map.isScrollEnabled = true
         map.showsCompass = false
         map.showsScale = false
         

@@ -9,7 +9,7 @@
 
 import UIKit
 
-
+/*
 //A struct that is used to store some of the JSON data
 //Note: "Codable" means that it can be used to encode and decode JSON data.
 //The varible name have to match the JSON key and the type has to match.
@@ -25,7 +25,7 @@ struct Country: Codable{
     let area: Double?           //Potentially used for map span
     let alpha2Code: String      //Potentially used for flags
 }
-
+*/
 
 //Enum for return the result of the web call
 //either return a success and the data or a fail and the error message
@@ -38,7 +38,7 @@ enum Result<Value>{
 //This is the controller for the table of countries
 class CountriesTableViewController: UITableViewController {
     
-    var countriesList = [Country]();          //Array of countries
+    var countriesList: [Country]! = []          //Array of countries
     let cellIdentifier = "countriesCell"        //cell indentifier of the countriesTableViewCell
     
     @IBOutlet var CountriesTableView: UITableView!      //The table

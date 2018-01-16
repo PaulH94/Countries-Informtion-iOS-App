@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB2528972006DE6900CFB764 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2528962006DE6900CFB764 /* InformationViewController.swift */; };
 		EB2C1A0C20092DC0003521E5 /* WebCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2C1A0B20092DC0003521E5 /* WebCallController.swift */; };
+		EB4C6C1B200DC4AD0030823D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4C6C1A200DC4AD0030823D /* Country.swift */; };
 		EB7E7AF42005936500765212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E7AF32005936500765212 /* AppDelegate.swift */; };
 		EB7E7AF92005936500765212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AF72005936500765212 /* Main.storyboard */; };
 		EB7E7AFB2005936500765212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB7E7AFA2005936500765212 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		EB2528962006DE6900CFB764 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		EB2C1A0B20092DC0003521E5 /* WebCallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCallController.swift; sourceTree = "<group>"; };
+		EB4C6C1A200DC4AD0030823D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		EB7E7AF02005936500765212 /* eBayCountryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eBayCountryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7E7AF32005936500765212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB7E7AF82005936500765212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				EB7E7AFF2005936500765212 /* Info.plist */,
 				EBFE3CF92006178000637761 /* CountriesTableViewCell.swift */,
 				EBFE3CFB20061A7200637761 /* CountriesTableViewController.swift */,
+				EB4C6C1A200DC4AD0030823D /* Country.swift */,
 			);
 			path = eBayCountryApp;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				EBFE3CFC20061A7200637761 /* CountriesTableViewController.swift in Sources */,
 				EB7E7AF42005936500765212 /* AppDelegate.swift in Sources */,
 				EBFE3CFA2006178000637761 /* CountriesTableViewCell.swift in Sources */,
+				EB4C6C1B200DC4AD0030823D /* Country.swift in Sources */,
 				EB2528972006DE6900CFB764 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

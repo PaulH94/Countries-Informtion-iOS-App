@@ -39,7 +39,10 @@ enum Result<Value>{
 class CountriesTableViewController: UITableViewController {
     
     var countriesList: [Country]! = []          //Array of countries
+    var filteredCountries: [Country]! = []
     let cellIdentifier = "countriesCell"        //cell indentifier of the countriesTableViewCell
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet var CountriesTableView: UITableView!      //The table
     
@@ -47,6 +50,14 @@ class CountriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Countries"         //Nav title
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Countries"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        
         
         //self.CountriesTableView.backgroundView = UILabel()
         //TODO: Add some sort of loading message
@@ -81,6 +92,22 @@ class CountriesTableViewController: UITableViewController {
         }
     }
     
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearch(_ searchText: String, scope: String = "All"){
+        filteredCountries = countriesList.filter({(country : Country) -> Bool in
+            return country.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        self.CountriesTableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -95,6 +122,10 @@ class CountriesTableViewController: UITableViewController {
 
     //number of cell which is equal to thw number of contries in the list
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering(){
+            return filteredCountries.count
+        }
+        
         return countriesList.count
     }
 
@@ -103,7 +134,15 @@ class CountriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountriesTableViewCell
         //display the country's name
-        cell.countryName.text = countriesList[indexPath.row].name
+        let country: Country
+
+        if isFiltering(){
+            country = filteredCountries[indexPath.row]
+        } else{
+            country = countriesList[indexPath.row]
+        }
+        
+        cell.countryName.text = country.name
 
         return cell
     }
@@ -112,19 +151,27 @@ class CountriesTableViewController: UITableViewController {
     //This is for when the cell is tapped/selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedIndexPath = indexPath.row
-        print("\(countriesList[selectedIndexPath].name) is being clicked")
+        //print("\(countriesList[selectedIndexPath].name) is being clicked")
+        
+        let selectedCountry: Country
+        
+        if isFiltering(){
+            selectedCountry = filteredCountries[selectedIndexPath]
+        } else {
+            selectedCountry = countriesList[selectedIndexPath]
+        }
         
         //make and prepare the view
         let infoView = InformationViewController()
-        infoView.countryName = countriesList[selectedIndexPath].name
-        infoView.countryNativeName = countriesList[selectedIndexPath].nativeName
-        infoView.countryCapital = countriesList[selectedIndexPath].capital
-        infoView.countryPopulation = countriesList[selectedIndexPath].population
-        infoView.countrySubregion = countriesList[selectedIndexPath].subregion
-        infoView.lat = countriesList[selectedIndexPath].latlng[0]
-        infoView.long = countriesList[selectedIndexPath].latlng[1]
+        infoView.countryName = selectedCountry.name
+        infoView.countryNativeName = selectedCountry.nativeName
+        infoView.countryCapital = selectedCountry.capital
+        infoView.countryPopulation = selectedCountry.population
+        infoView.countrySubregion = selectedCountry.subregion
+        infoView.lat = selectedCountry.latlng[0]
+        infoView.long = selectedCountry.latlng[1]
         
-        if let area = countriesList[selectedIndexPath].area{
+        if let area = selectedCountry.area{
             infoView.countryArea = area
             var span = area.squareRoot()
             span = (span * 1000) + 15000
@@ -157,3 +204,12 @@ class CountriesTableViewController: UITableViewController {
     */
 
 }
+
+extension CountriesTableViewController: UISearchResultsUpdating{
+ 
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearch(searchController.searchBar.text!)
+    }
+ 
+}
+

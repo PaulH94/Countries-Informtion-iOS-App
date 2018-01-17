@@ -50,11 +50,13 @@ class CountriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Countries"         //Nav title
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search COuntries"
+        searchController.searchBar.placeholder = "Search Countries"
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
         
         
         //self.CountriesTableView.backgroundView = UILabel()
@@ -103,7 +105,7 @@ class CountriesTableViewController: UITableViewController {
     }
     
     func isFiltering() -> Bool {
-        return searchController.isActive && searchBarIsEmpty()
+        return searchController.isActive && !searchBarIsEmpty()
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,10 +135,7 @@ class CountriesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CountriesTableViewCell
         //display the country's name
         let country: Country
-        
-        print("LOOK HERE")
-        print(isFiltering())
-        
+
         if isFiltering(){
             country = filteredCountries[indexPath.row]
         } else{

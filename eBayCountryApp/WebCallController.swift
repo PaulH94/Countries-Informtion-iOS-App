@@ -69,7 +69,7 @@ class WebCallController {
         task.resume()
     }
     
-    /*
+    
     func getPic(countryCode: String) -> UIImage{
         let url = URL(string:"http://geonames.org/flags/l/" + countryCode.lowercased() + ".gif")
         let config = URLSessionConfiguration.default
@@ -99,6 +99,6 @@ class WebCallController {
         
         dlPic.resume()
         return pic
-    }*/
+    }
     
 }

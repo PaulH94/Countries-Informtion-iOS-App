@@ -33,6 +33,7 @@ class InformationViewController: UIViewController {
         
         //Add all the views to the main view
         view.addSubview(nameLabel)
+        //view.addSubview(flagImage)
         view.addSubview(nativeNameLabel)
         view.addSubview(capitalLabel)
         view.addSubview(populationLabel)
@@ -61,6 +62,14 @@ class InformationViewController: UIViewController {
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
         nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        
+        /*
+        flagImage.translatesAutoresizingMaskIntoConstraints = false
+        flagImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        flagImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        flagImage.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20).isActive = true
+        flagImage.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.50).isActive = true
+        */
         
         nativeNameLabel.translatesAutoresizingMaskIntoConstraints = false
         nativeNameLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
@@ -157,6 +166,11 @@ class InformationViewController: UIViewController {
         label.adjustsFontSizeToFitWidth = true          //adjust
         return label
     }()
+    
+    /*
+    lazy var flagImage: UIImageView = {
+        return UIImageView(image: countryFlag)
+    }()*/
 
     //The map View
     lazy var mapView:MKMapView = {

@@ -7,7 +7,7 @@ TODOS:<br />
 -Change the span on the map depending on country size. [FINISHED]<br />
 -Add the countries' map to both the table view and info view.<br />
 -Honor left margin of left edge in UITableView [FINISHED] <br />
--Break up UITableview into sections <br />
+-Break up UITableview into sections/add search bar [FINISHED} <br />
 -Moving COuntries struct and reanming it to Country [FINISHED] <br />
 -Make map bigger. [FINISHED] <br/>
 -Pinch and zoom for map. [FINISHED] <br />
